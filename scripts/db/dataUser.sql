@@ -1,4 +1,4 @@
-USE ASS;
+USE ass;
 
 DELETE FROM users WHERE 1;
 
