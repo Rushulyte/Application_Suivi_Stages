@@ -1,7 +1,7 @@
 Application Suivi Stages
 =============
 
-![](https://github.com/Rushulyte/src/
+![](https://github.com/Rushulyte/Aplication_Suivi_Stages/build/public/img/gradient_icon.png)
 
 > Chaque année les étudiants de BTS SIO doivent effectuer une période de stage en
 entreprise. Ces stages sont obligatoires pour valider leur première année ainsi que leur
@@ -19,12 +19,6 @@ recherches de tous les étudiants sera donné aux enseignants, afin qu’ils pui
 recherches.
 
 -  Version 2<sub>1002</sub>
-
-**Table of Contents**
-
-[TOCM]
-
-[TOC]
 
 ## Fonctionnalités accessibles aux étudiants
 
