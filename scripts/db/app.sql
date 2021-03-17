@@ -1,0 +1,5 @@
+CREATE USER 'app' IDENTIFIED BY ?;
+
+GRANT SELECT, INSERT, UPDATE, DELETE
+    ON ass.*
+    TO 'app';
