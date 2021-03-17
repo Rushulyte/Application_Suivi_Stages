@@ -1,7 +1,8 @@
-*/*.css linguist-language=css
-*/*.html linguist-language=html
-*/*.php linguist-language=php
-*/*.py linguist-language=python
-*/*.sql linguist-detectable=true
+*.css linguist-language=css
+*.html linguist-language=html
+*.php linguist-language=php
+*.py linguist-language=python
 
-*/*.md linguist-detectable=true
+* text=auto
+*.sql linguist-detectable=true
+*.sql linguist-language=sql
