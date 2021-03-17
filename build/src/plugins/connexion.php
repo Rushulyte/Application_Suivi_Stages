@@ -1,4 +1,5 @@
 <?php
+
     $user = 'app';
-    $pass = 'o2bbN-fRM6LfzrxQD2f-ZDYVdSYjjBe4';
+    $pass = file_get_contents('../../keys/app.key');
     $connexion = new PDO('mysql:host=127.0.0.1;dbname=ass', $user, $pass);
