@@ -1,4 +1,4 @@
-<?php define('__TEMPLATES__', dirname(__FILE__) . '/templates') ?>
+<?php define('__TEMPLATES__', dirname(__FILE__) . '/../templates') ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -17,7 +17,7 @@
             <section id="central">
                 <div>
                     <h1>Suivi de Stages</h1>
-                    <a id="button" href="login.php">Se connecter</a>
+                    <a id="button" href="../src/login.php">Se connecter</a>
                 </div>
             </section>
 
