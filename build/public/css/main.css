@@ -1,0 +1,132 @@
+::-webkit-scrollbar {
+	display: none
+}
+
+@font-face {
+	font-family: 'Varela Round';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('../fonts/varela_round.woff2') format('woff2'), url('../fonts/varela_round.ttf') format('opentype');
+	unicode-range: U+0000-00FF
+}
+
+a, h1, h2, h3, h4 {
+	font-family: 'Varela Round', serif;
+	color: white
+}
+
+body {
+	background: radial-gradient(circle, rgba(0, 140, 255, 1) 0, rgba(0, 96, 255, 1) 100%);
+	-ms-overflow-style: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	margin: 0
+}
+
+#particles-js {
+	position: absolute;
+	z-index: -1;
+	height: 100%;
+	width: 100%
+}
+
+main {
+	height: 100vh
+}
+
+img {
+	height: 64px;
+	margin: 25px
+}
+
+#nav, #links {
+	display: flex;
+	align-items: center
+}
+
+#nav:before, #links:before, #nav:after, #links:after {
+	content: '';
+	overflow: hidden;
+	background-color: white;
+	border-radius: 5px;
+	height: 3px;
+	flex: 1
+}
+
+#central {
+	height: 75vh;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	align-items: center;
+	text-align: center
+}
+
+h1 {
+	font-size: 48px
+}
+
+#button {
+	text-decoration: none;
+	color: rgba(0, 86, 255, 1);
+	padding: 15px 40px;
+	border-radius: 25px;
+	font-weight: 500;
+	background-size: 100% 2px;
+	background: white no-repeat bottom;
+	transition: .2s ease-in-out
+}
+
+#button:hover {
+	box-shadow: 0 0 10px #fff, 0 0 40px#fff
+}
+
+#links section {
+	margin: 15px;
+	padding: 5px;
+	border-bottom: 2px solid transparent;
+	transition: .2s ease-in-out
+}
+
+#links section a {
+	text-decoration: none
+}
+
+#links img {
+	height: 16px;
+	margin: 0
+}
+
+#links section:hover {
+	border-bottom: 2px solid white
+}
+
+footer {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	margin-bottom: 50px
+}
+
+footer img {
+	height: 96px
+}
+
+footer section {
+	display: flex;
+	align-items: center
+}
+
+footer section section section {
+	display: flex;
+	flex-direction: column
+}
+
+footer section section h4 {
+	margin: 0
+}
