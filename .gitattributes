@@ -1,0 +1,6 @@
+*.css linguist-language=css
+*.html linguist-language=html
+*.md linguist-language=md
+*.php linguist-language=php
+*.py linguist-language=python
+*.sql linguist-language=sql
