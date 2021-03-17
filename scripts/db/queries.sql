@@ -1,0 +1,4 @@
+USE ASS;
+
+SELECT *
+FROM USERS;

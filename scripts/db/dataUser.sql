@@ -1,0 +1,18 @@
+USE ASS;
+
+DELETE FROM users WHERE 1;
+
+INSERT INTO USERS(LOGIN, MDP, TYPE)
+VALUES('admin','azertyuiop','admin');
+
+INSERT INTO USERS(LOGIN, MDP, NOM, PRENOM, TYPE)
+VALUES('lmery','azerty123','MERY','Ludovic', 'prof');
+
+INSERT INTO USERS(LOGIN, MDP, NOM, PRENOM, TYPE)
+VALUES('ppalmier','P@ssw0rd','PALMIER','Pascal', 'prof');
+
+INSERT INTO USERS(LOGIN, MDP, NOM, PRENOM)
+VALUES('yboniface','@@nordvpn','BONIFACE','Yohann');
+
+INSERT INTO USERS(LOGIN, MDP, NOM, PRENOM)
+VALUES('vbetsch','00000000','BETSCH','Victor');
