@@ -3,7 +3,7 @@
 <html lang="fr">
     <head>
         <title>Application de Suivi de Stage</title>
-        <?php require_once(__TEMPLATES__.'/meta.html'); ?>
+        <?php require_once(__TEMPLATES__ . '/meta.html'); ?>
         <link rel="stylesheet" href="css/main.css">
         <link rel="icon" href="svg/favicon.svg">
     </head>
@@ -42,7 +42,7 @@
                 </section>
             </section>
         </main>
-        <?php require_once(__TEMPLATES__.'/footer.html'); ?>
+        <?php require_once(__TEMPLATES__ . '/footer.html'); ?>
     </body>
     <script src="js/particles.min.js"></script>
     <script src="js/app.js"></script>
