@@ -1,7 +1,7 @@
 Application Suivi Stages
 =============
 
-![](build/public/img/gradient_icon.png =64x64)
+<img src="build/public/img/gradient_icon.png" alt="Icon SIO" style="height:64px;"/>
 
 > Chaque année les étudiants de BTS SIO doivent effectuer une période de stage en
 entreprise. Ces stages sont obligatoires pour valider leur première année ainsi que leur
