@@ -20,14 +20,14 @@
             if ($hashed == $row["MDP"]){
                 $found = True;
 
-                if ($row["TYPE"] == 0) {
+                if ($row["TYPE"] == 1) {
                     header("Location: accounts_manager.php");
                     die();
 
-                } else if ($row["TYPE"] == 1){
+                } else if ($row["TYPE"] == 2){
                     header("Location: dashboard.php");
                     die();
-                } else if ($row["TYPE"] == 2){
+                } else if ($row["TYPE"] == 3){
                     header("Location: dashboard.php");
                     die();
                 } else {
