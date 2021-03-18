@@ -22,9 +22,9 @@ class User:
 
 
 USERS = (
-    User("élève", 'e', '_', '_', "hello world"),
-    User("prof", 'p', '_', '_', "azertyuiop"),
     User("admin", 'a', '_', '_', "qsdfghjklm"),
+    User("prof", 'p', '_', '_', "azertyuiop"),
+    User("élève", 'e', '_', '_', "hello world"),
 )
 
 
