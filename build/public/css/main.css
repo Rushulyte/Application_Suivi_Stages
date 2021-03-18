@@ -117,16 +117,16 @@ footer img {
 	height: 96px
 }
 
-footer section {
+.dev_wrapper {
 	display: flex;
 	align-items: center
 }
 
-footer section section section {
+.dev_info {
 	display: flex;
 	flex-direction: column
 }
 
-footer section section h4 {
+.dev_inner {
 	margin: 0
 }
