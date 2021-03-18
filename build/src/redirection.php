@@ -8,7 +8,9 @@
         $mdp = $_POST['mdp'];
         $hashed = hash("sha512", $mdp);
 
-        $q_select = "SELECT users.authentication_string AS 'MDP', users.account_type AS 'TYPE' FROM USERS WHERE users.last_name = ?";
+        $q_select = "SELECT users.authentication_string AS 'MDP', users.id_account_type AS 'TYPE' 
+                     FROM USERS 
+                     WHERE users.login = ?";
         $cur = $connexion -> prepare($q_select);
         $cur -> execute([$login]);
 
