@@ -2,4 +2,3 @@
 */
 # Except this file
 !.gitignore
-!master_gen.json
