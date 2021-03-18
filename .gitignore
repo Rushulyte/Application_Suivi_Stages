@@ -1,5 +1,4 @@
 .idea
-.vagrant
-.venv
+venv
 
 */*/.key
