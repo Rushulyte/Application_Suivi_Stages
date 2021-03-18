@@ -43,7 +43,7 @@ def main():
             "values (%s, %s, %s, %s, %s);", params=(user.login, user.first, user.last, user.hash, user.type_id)
         )
 
-        with open(f"../../keys/users/{user.login}", 'w+') as f:
+        with open(f"../../keys/users/{user.login}.key", 'w+') as f:
             f.write(user.password)
 
     connection.commit()
