@@ -1,23 +1,25 @@
+import json
 import random
-import string
+import os
 
 
-class App:
+def main():
+    with open(f"../keys/master_gen.json") as f:
+        settings = json.load(f)
 
-    def __init__(self):
-        self.is_running = False
-        with open("../keys/master_gen.key") as f:
-            self.master_key_gen = f.read()
+    if not os.path.isdir(f'../keys/db/'):
+        os.mkdir(f"../keys/db/")
 
-    def __call__(self):
-        is_running = True
+    with open(f"../keys/db/root.key", "w+") as f:
+        f.write('')
 
-        while is_running:
-            random.seed(f"{self.master_key_gen}{input('user : ')}")
+    random.seed(f"{settings['secret']}")
 
-            base = ''.join((string.ascii_letters, string.digits, '-_'))
-            print(''.join(random.choice(base) for _ in range(32)))
+    with open(f"../keys/db/app.key", "w+") as f:
+        f.write(''.join(random.choice(settings['base']) for _ in range(settings['length'])))
+
+    print('done')
 
 
 if __name__ == '__main__':
-    App()()
+    main()

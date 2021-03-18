@@ -1,0 +1,5 @@
+{
+  "base": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_",
+  "length": 32,
+  "secret": "4815162342"
+}
