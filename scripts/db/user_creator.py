@@ -8,7 +8,7 @@ class User:
     _types = ('admin', 'prof', 'élève')
 
     def __init__(self, _type, login, first, last, password):
-        self.type_id = self._types.index(_type)
+        self.type_id = self._types.index(_type) + 1
 
         self.login = login
         self.first = first
