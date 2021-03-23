@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/public_html":{"guestpath":"/home/vagrant/public_html","hostpath":"C:/git/github/Rushulyte/Application_Suivi_Stages/build","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/git/github/Rushulyte/Application_Suivi_Stages","disabled":false,"__vagrantfile":true}}}
