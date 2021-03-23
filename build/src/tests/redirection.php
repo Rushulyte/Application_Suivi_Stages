@@ -1,21 +1,21 @@
 <?php
-    define('__PLUGINS__', dirname(__FILE__) . '/plugins');
-    require_once (__PLUGINS__.'/connexion.php');
+    require_once("../plugins/connexion.php");
 
     if (isset($_POST['login']) and isset($_POST['mdp'])) {
 
         $login = $_POST['login'];
-        $mdp = $_POST['mdp'];
-        $hashed = hash("sha512", $mdp);
+        $password = $_POST['mdp'];
+        $hashed = hash("sha512", $password);
 
         $q_select = "SELECT users.authentication_string AS 'MDP', users.id_account_type AS 'TYPE' 
                      FROM USERS 
                      WHERE users.login = ?";
-        $cur = $connexion -> prepare($q_select);
-        $cur -> execute([$login]);
+
+        $cursor = $connexion -> prepare($q_select);
+        $cursor -> execute([$login]);
 
         $found = False;
-        foreach ($cur -> fetchAll() as $row) {
+        foreach ($cursor -> fetchAll() as $row) {
 
             if ($hashed == $row["MDP"]){
                 $found = True;

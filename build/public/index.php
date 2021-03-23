@@ -1,48 +1,50 @@
-<?php define('__TEMPLATES__', dirname(__FILE__) . '/../templates') ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
         <title>Application de Suivi de Stage</title>
-        <?php require_once(__TEMPLATES__ . '/meta.html'); ?>
+        <?php require_once('../templates/meta.html'); ?>
         <link rel="stylesheet" href="css/main.css">
         <link rel="icon" href="svg/favicon.svg">
     </head>
     <body>
         <div id="particles-js"></div>
+        <div id="mouse"></div>
+
         <main>
-            <a id="nav">
-                <img src="svg/sio.svg" alt="236">
-            </a>
+            <nav>
+                <a class="clickable" id="nav" href="#">
+                    <img src="svg/sio.svg" alt="236">
+                </a>
+            </nav>
 
             <section id="central">
                 <div>
                     <h1>Suivi de Stages</h1>
-                    <a id="button" href="../src/login.php">Se connecter</a>
+                    <a class="clickable" id="button" href="../src/login.php">Se connecter</a>
                 </div>
-            </section>
 
-            <section id="links">
-                <section>
-                    <img src="svg/education.svg" alt="236">
-                    <a target="_blank" href="https://www.lyceefulbert.fr/">
-                        Lycée
-                    </a>
+            </section>
+            <?php require_once('../templates/footers/external_links.html'); ?>
+        </main>
+        <div class="hidden_info">
+            <h2>Développé par</h2>
+            <section class="dev_wrapper">
+                <section class="dev_inner">
+                    <section class="dev_info">
+                        <h3>Boniface Yohann</h3>
+                        <h4>CSS, Php, & SQL - Design</h4>
+                    </section>
+                    <img src="../public/svg/edhyjox.svg" alt="236">
                 </section>
-                <section>
-                    <img src="svg/email.svg" alt="236">
-                    <a target="_blank" href="mailto:ludovic.mery@ac-orleans-tours.fr">
-                        Mail
-                    </a>
-                </section>
-                <section>
-                    <img src="svg/facebook.svg" alt="236">
-                    <a target="_blank" href="https://www.facebook.com/BTS-SIO-Lyc%C3%A9e-Fulbert-668034059923781">
-                        Facebook
-                    </a>
+                <section class="dev_inner">
+                    <img src="../public/svg/reyks.svg" alt="236">
+                    <section class="dev_info">
+                        <h3>Betsch Victor</h3>
+                        <h4>HTML, Php & SQL - Concept</h4>
+                    </section>
                 </section>
             </section>
-        </main>
-        <?php require_once(__TEMPLATES__ . '/footer.html'); ?>
+        </div>
     </body>
     <script src="js/particles.min.js"></script>
     <script src="js/app.js"></script>
