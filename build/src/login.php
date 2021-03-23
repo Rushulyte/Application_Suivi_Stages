@@ -31,7 +31,7 @@
         <form action="tests/redirection.php" method="POST">
             <div class="equalizer">
                 <label for="id">
-                    <input type="text" name="login" placeholder="Identifiant" pattern="[a-zA-Z]" required>
+                    <input type="text" name="login" placeholder="Identifiant" required>
                 </label>
                 <label for="mdp">
                     <input type="password" name="mdp" placeholder="Mot de Passe" required>

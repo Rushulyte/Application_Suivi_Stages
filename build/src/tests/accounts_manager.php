@@ -7,9 +7,6 @@
         <link rel="icon" href="../../public/svg/favicon.svg">
     </head>
     <body>
-    <header>
-        <?php require_once("../../templates/navbar.html"); ?>
-    </header>
     <main>
         <?php
         require_once("../plugins/connexion.php");
@@ -36,13 +33,13 @@
                 <td>TYPE</td>
             </tr>
             <?php
-            $cur = $connexion->prepare($q_select);
-            $cur -> execute();
+            $cursor = $connexion->prepare($q_select);
+            $cursor -> execute();
 
-            foreach ($cur->fetchAll(PDO::FETCH_ASSOC) as $row) {
+            foreach ($cursor->fetchAll(PDO::FETCH_ASSOC) as $table_row) {
                 echo "<tr>";
-                foreach ($row as $item) {
-                    echo "<td>$item</td>";
+                foreach ($table_row as $value) {
+                    echo "<td>$value</td>";
                 }
                 echo "</tr>";
             }
