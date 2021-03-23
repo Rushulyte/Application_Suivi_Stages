@@ -37,7 +37,7 @@
                     <img src="../public/svg/edhyjox.svg" alt="236">
                 </section>
                 <section class="dev_inner">
-                    <img src="../public/svg/reyks.svg" alt="236">
+                    <img src="svg/vector.svg" alt="236">
                     <section class="dev_info">
                         <h3>Betsch Victor</h3>
                         <h4>HTML, Php & SQL - Concept</h4>
