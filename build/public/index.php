@@ -18,7 +18,7 @@
             </nav>
 
             <section id="central">
-                <div>
+                <div class="gap">
                     <h1>Suivi de Stages</h1>
                     <a class="clickable" id="button" href="../src/login.php">Se connecter</a>
                 </div>
