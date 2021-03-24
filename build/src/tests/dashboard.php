@@ -1,15 +1,15 @@
-<?php define('__TEMPLATES__', dirname(__FILE__) . '../../templates') ?>
+<?php define('__TEMPLATES__', dirname(__FILE__) . '../../templates/') ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
         <title>Dashboard</title>
-        <?php require_once(__TEMPLATES__ . '/meta.html'); ?>
+        <?php require_once('../../templates/meta.html'); ?>
         <link rel="stylesheet" href="../../public/css/main.css">
         <link rel="icon" href="../../public/svg/favicon.svg">
     </head>
     <body>
         <header>
-            <?php require_once(__TEMPLATES__ . '/navbar_profile.html'); ?>
+            <?php require_once('../../templates/navbar.html'); ?>
         </header>
         <main>
             <h1>Recherche de Stages en BTS SIO</h1>
