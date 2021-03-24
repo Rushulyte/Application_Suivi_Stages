@@ -13,6 +13,7 @@
                 <a class="clickable" id="nav" href="#">
                     <img src="../../public/svg/sio.svg" alt="236">
                 </a>
+                <a href="profil.php">Profil</a>
             </nav>
         </header>
         <main>
