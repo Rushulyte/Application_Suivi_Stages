@@ -1,0 +1,5 @@
+USE mysql;
+DROP USER IF EXISTS 'app';
+CREATE USER 'app'@'localhost' IDENTIFIED BY ?;
+GRANT SELECT, INSERT, UPDATE, DELETE ON ass.* TO 'app'@'localhost';
+FLUSH PRIVILEGES;

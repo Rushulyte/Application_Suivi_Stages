@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Varela Round';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/varela_round.woff2') format('woff2'), url('../fonts/varela_round.ttf') format('opentype');
+    unicode-range: U+0000-00FF;
+}
+
+table {
+    text-align: center;
+    font-family: 'Varela Round', serif;
+    color: white;
+}
+
+tr {
+    width: 100%;
+}
