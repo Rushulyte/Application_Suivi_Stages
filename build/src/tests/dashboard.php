@@ -9,7 +9,11 @@
     </head>
     <body>
         <header>
-            <?php require_once('../../templates/navbar.html'); ?>
+            <nav>
+                <a class="clickable" id="nav" href="#">
+                    <img src="../../public/svg/sio.svg" alt="236">
+                </a>
+            </nav>
         </header>
         <main>
             <h1>Recherche de Stages en BTS SIO</h1>
