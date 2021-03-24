@@ -20,7 +20,7 @@
             if ($hashed == $row["MDP"]){
                 $found = True;
 
-                $q_insert_logs = "INSERT INTO connexion(date_connect, id_user) VALUES(curdate(),?)";
+                $q_insert_logs = "INSERT INTO connexion(datetime_connect, id_user) VALUES(now(),?)";
                 $cursor = $connexion -> prepare($q_insert_logs);
                 $cursor -> bindParam(1, $row["ID"]);
                 $cursor -> execute();

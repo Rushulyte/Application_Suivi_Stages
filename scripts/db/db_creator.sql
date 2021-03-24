@@ -30,7 +30,7 @@ create table if not exists connexion
 (
     id int auto_increment
         primary key,
-    date_connect date not null,
+    datetime_connect datetime not null,
     id_user int not null,
     foreign key (id_user) references users(id)
 );
