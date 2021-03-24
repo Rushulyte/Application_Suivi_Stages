@@ -7,7 +7,7 @@
         $password = $_POST['mdp'];
         $hashed = hash("sha512", $password);
 
-        $q_select = "SELECT users.authentication_string AS 'MDP', users.id_account_type AS 'TYPE' 
+        $q_select = "SELECT users.authentication_string AS 'MDP', users.id_account_type AS 'TYPE', users.id AS 'ID' 
                      FROM USERS 
                      WHERE users.login = ?";
 
@@ -19,6 +19,11 @@
 
             if ($hashed == $row["MDP"]){
                 $found = True;
+
+                $q_insert_logs = "INSERT INTO connexion(date_connect, id_user) VALUES(curdate(),?)";
+                $cursor = $connexion -> prepare($q_insert_logs);
+                $cursor -> bindParam(1, $row["ID"]);
+                $cursor -> execute();
 
                 if ($row["TYPE"] == 1) {
                     header("Location: accounts_manager.php");
