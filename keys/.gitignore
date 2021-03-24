@@ -1,5 +1,0 @@
-# Ignore every folder in this directory
-*/
-master_gen.json
-# Except this file
-!.gitignore
