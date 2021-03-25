@@ -39,7 +39,7 @@ def main():
 
     for user in USERS:
         cursor.execute(
-            "insert into ass.users (login, first_name, last_name, authentication_string, id_account_type)"
+            "insert into ass.users (identifiant, first_name, last_name, authentication_string, id_account_type)"
             "values (%s, %s, %s, %s, %s);", params=(user.login, user.first, user.last, user.hash, user.type_id)
         )
 
