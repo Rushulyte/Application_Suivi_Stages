@@ -7,7 +7,7 @@ if (empty($_SESSION)) {
     die();
 }
 
-include "../includes/connexion.php";
+include "../plugins/connexion.php";
 
 if (!isset($_SESSION['type'])) {
     header('Location: login.php?error=unset');
@@ -25,7 +25,7 @@ if ($_SESSION['type'] !== 'admin') {
 <html lang="fr">
 <head>
     <title>Gestionnaire de sessions</title>
-    <?php require_once("../../templates/meta.html"); ?>
+    <?php require_once("../templates/meta.html"); ?>
     <link rel="stylesheet" href="../../../../ass/app/css/main.css">
     <link rel="stylesheet" href="../../../../ass/app/css/table.css">
     <link rel="icon" href="../../svg/favicon.svg">

@@ -2,7 +2,7 @@
 <html lang="fr">
     <head>
         <title>Application de Suivi de Stage</title>
-        <?php require_once('../../templates/meta.html'); ?>
+        <?php require_once('../templates/meta.html'); ?>
         <link rel="stylesheet" href="../../../../ass/app/css/main.css">
         <link rel="icon" href="../../svg/favicon.svg">
     </head>
@@ -10,11 +10,7 @@
         <div id="particles-js"></div>
 
         <main>
-            <nav>
-                <a class="clickable" id="nav" href="#">
-                    <img src="../../svg/sio.svg" alt="236">
-                </a>
-            </nav>
+            <?php require_once('../templates/navbar.html'); ?>
 
             <section id="central">
                 <div class="gap">
@@ -23,7 +19,7 @@
                 </div>
 
             </section>
-            <?php require_once('../../templates/footers/external_links.html'); ?>
+            <?php require_once('../templates/external_links.html'); ?>
         </main>
         <div class="hidden_info">
             <h2>Développé par</h2>
@@ -45,6 +41,6 @@
             </section>
         </div>
     </body>
-    <script src="js/particles.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src="../../js/particles.min.js"></script>
+    <script src="../../js/app.js"></script>
 </html>

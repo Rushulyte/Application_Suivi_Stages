@@ -1,8 +1,7 @@
 <?php
 define('PAGES_', '../pages/');
-define('INCLUDES_', '../includes/');
 
-include INCLUDES_ . 'connexion.php';
+include 'connexion.php';
 
 if ((!isset($_POST['identifiant'])) or (!isset($_POST['password']))) {
     header('Location: ' . PAGES_ . 'login.php?error=unset');

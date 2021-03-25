@@ -1,30 +1,35 @@
 <html lang="fr">
 <head>
     <title>Connexion</title>
-    <?php require_once('../../templates/meta.html'); ?>
+    <?php require_once('../templates/meta.html'); ?>
     <link rel="stylesheet" href="../../../../ass/app/css/main.css">
     <link rel="stylesheet" href="../../../../ass/app/css/form_login.css">
     <link rel="icon" href="../../svg/favicon.svg">
 </head>
 <body>
 <main>
-    <?php require_once('../../templates/navbar.html'); ?>
+    <?php require_once('../templates/navbar.html'); ?>
 
     <section id="central">
         <h1>Connexion</h1>
 
-        <p><?php
-            if (isset($_GET["login"])) {
-                $issue = $_GET["login"];
+        <p>
+            <?php
+            if (isset($_GET["error"])) {
+                switch (htmlspecialchars($_GET["error"])) {
+                    case "unset":
+                        echo "Veuillez entrer un nom et un mot de passe pour vous connecter";
+                        break;
+                    case "incorrect":
+                        echo "Le nom ou le mot de passe est incorrect !";
+                        break;
 
-                if ($issue == "false")
-                    echo "Veuillez entrer un nom et un mot de passe pour vous connecter";
-                elseif ($issue == "invalid")
-                    echo "Le nom ou le mot de passe est incorrect !";
-                else
-                    echo "Une erreur inconnue s'est produite durant la validation";
-            } else
-                echo "Authentifiez vous avec vos identifiants du domaine SIO.Fulbert";
+                    default:
+                        echo "Une erreur inconnue s'est produite durant la validation";;
+                }
+            } else {
+                    echo "Authentifiez vous avec vos identifiants du domaine SIO.Fulbert";
+                }
             ?>
         </p>
 
@@ -43,6 +48,7 @@
             </div>
         </form>
     </section>
+    <line>
 </main>
 </body>
 </html>
