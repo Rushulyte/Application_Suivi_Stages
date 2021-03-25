@@ -1,5 +1,7 @@
 # Ignore every folder in this directory
 .gitignore/
-../master_gen.json
+master_gen.json
+db
+users
 # Except this file
 !.gitignore

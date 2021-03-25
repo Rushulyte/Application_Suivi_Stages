@@ -26,8 +26,8 @@ if ($_SESSION['type'] !== 'admin') {
 <head>
     <title>Gestionnaire de sessions</title>
     <?php require_once("../templates/meta.html"); ?>
-    <link rel="stylesheet" href="../../../../ass/app/css/main.css">
-    <link rel="stylesheet" href="../../../../ass/app/css/table.css">
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/table.css">
     <link rel="icon" href="../../svg/favicon.svg">
 </head>
 <body>
