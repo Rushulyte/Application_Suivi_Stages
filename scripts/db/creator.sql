@@ -28,3 +28,6 @@ create table users
     id_account_type       int default 3 null
 );
 
+insert into ass.account_types (id, name) values (1, 'admin');
+insert into ass.account_types (id, name) values (2, 'prof');
+insert into ass.account_types (id, name) values (3, 'élève');
