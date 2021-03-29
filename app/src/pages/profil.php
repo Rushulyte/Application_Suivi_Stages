@@ -1,9 +1,18 @@
 <?php
 define('PAGES_', '../pages/');
 session_start();
-?>
 
-<?php define('__TEMPLATES__', dirname(__FILE__) . '../templates') ?>
+if (empty($_SESSION)) {
+    header('Location: ' . PAGES_ . 'login.php?error=unset');
+    die();
+}
+
+if (!isset($_SESSION['first']) || !isset($_SESSION['last']) || !isset($_SESSION['type'])) {
+    header('Location: login.php?error=unset');
+    die();
+}
+
+define('__TEMPLATES__', dirname(__FILE__) . '../templates'); ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

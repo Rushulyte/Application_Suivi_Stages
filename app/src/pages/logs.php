@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (empty($_SESSION)) {
+    header('Location: ' . PAGES_ . 'login.php?error=unset');
+    die();
+} ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>

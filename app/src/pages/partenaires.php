@@ -1,4 +1,14 @@
-<?php define('__TEMPLATES__', dirname(__FILE__) . '../templates') ?>
+<?php
+define('__TEMPLATES__', dirname(__FILE__) . '../templates');
+
+session_start();
+
+if (empty($_SESSION)) {
+    header('Location: ' . PAGES_ . 'login.php?error=unset');
+    die();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
