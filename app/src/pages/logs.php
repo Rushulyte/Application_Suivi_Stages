@@ -1,25 +1,3 @@
-<?php
-define('PAGES_', '../pages/');
-
-session_start();
-
-if (empty($_SESSION)) {
-    header('Location: login.php?error=unset');
-    die();
-}
-
-if (!isset($_SESSION['type'])) {
-    header('Location: login.php?error=unset');
-    die();
-}
-
-if ($_SESSION['type'] !== 'admin') {
-    header('Location: dashboard.php');
-    die();
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -38,33 +16,42 @@ if ($_SESSION['type'] !== 'admin') {
     </nav>
 </header>
 <main>
+
     <?php
+    require_once("../plugins/connexion.php");
 
-    include "../plugins/connexion.php";
 
-    $get_users = '
-                    SELECT
-                        U.identifiant as id, 
-                        U.last_name as last,
-                        U.first_name as first,
-                        A.name as type 
-                    FROM users U
-                        INNER JOIN account_types A on U.id_account_type = A.id;
-                '; ?>
+    $q_select_logs = "SELECT C.id AS ID_CO, 
+                                     C.date_connection AS DATETIME, 
+                                     C.id_user AS ID_USER,
+                                     U.identifiant AS LOGIN,
+                                     U.first_name AS PRENOM,
+                                     U.last_name AS NOM,
+                                     A.name as TYPE
+                              FROM connexion C
+                                INNER JOIN users U ON C.id_user = U.identifiant
+                                INNER JOIN account_types A ON U.id_account_type = A.id
+                              ORDER BY C.id;";
+
+    ?>
+
 
     <table>
         <thead>
         <tr>
+            <th>num</th>
+            <th>horodatage</th>
+            <th>id</th>
             <th>login</th>
+            <th>prenom</th>
             <th>nom</th>
-            <th>prénom</th>
             <th>type</th>
         </tr>
         </thead>
 
         <tbody>
         <?php
-        $cursor = $connexion->prepare($get_users);
+        $cursor = $connexion->prepare($q_select_logs);
         $cursor->execute();
 
         foreach ($cursor->fetchAll(PDO::FETCH_ASSOC) as $table_row) {
@@ -77,6 +64,7 @@ if ($_SESSION['type'] !== 'admin') {
         ?>
         </tbody>
     </table>
+
 </main>
 </body>
 </html>

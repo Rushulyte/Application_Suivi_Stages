@@ -51,5 +51,6 @@ $_SESSION['first'] = $array['first'];
 $_SESSION['last'] = $array['last'];
 $_SESSION['type'] = $array['type'];
 
+
 header('Location: ' . PAGES_ . 'dashboard.php');
 die();
