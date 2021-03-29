@@ -1,6 +1,4 @@
 <?php
-define('PAGES_', '../pages/');
-
 session_start();
 
 if (empty($_SESSION)) {
@@ -24,7 +22,7 @@ if ($_SESSION['type'] !== 'admin') {
 <html lang="fr">
 <head>
     <title>Gestionnaire de sessions</title>
-    <?php require_once("../templates/meta.html"); ?>
+    <?php require_once('../templates/meta.html'); ?>
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/table.css">
     <link rel="icon" href="../../svg/favicon.svg">
@@ -40,7 +38,7 @@ if ($_SESSION['type'] !== 'admin') {
 <main>
     <?php
 
-    include "../plugins/connexion.php";
+    include '../plugins/connexion.php';
 
     $get_users = '
                     SELECT
@@ -68,11 +66,11 @@ if ($_SESSION['type'] !== 'admin') {
         $cursor->execute();
 
         foreach ($cursor->fetchAll(PDO::FETCH_ASSOC) as $table_row) {
-            echo "<tr>";
+            echo '<tr>';
             foreach ($table_row as $value) {
                 echo "<td>$value</td>";
             }
-            echo "</tr>";
+            echo '</tr>';
         }
         ?>
         </tbody>

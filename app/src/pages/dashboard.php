@@ -8,9 +8,8 @@ if (empty($_SESSION)) {
     header('Location: ' . PAGES_ . 'login.php?error=unset');
     die();
 }
-?>
+#define('TEMPLATES_', dirname(__FILE__) . '../templates/') ?>
 
-<?php define('__TEMPLATES__', dirname(__FILE__) . '../templates/') ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

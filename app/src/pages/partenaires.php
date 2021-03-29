@@ -1,5 +1,5 @@
 <?php
-define('__TEMPLATES__', dirname(__FILE__) . '../templates');
+#define('TEMPLATES_', dirname(__FILE__) . '../templates');
 
 session_start();
 

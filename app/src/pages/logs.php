@@ -10,7 +10,7 @@ if (empty($_SESSION)) {
 <html lang="fr">
 <head>
     <title>Gestionnaire de sessions</title>
-    <?php require_once("../templates/meta.html"); ?>
+    <?php require_once('../templates/meta.html'); ?>
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/table.css">
     <link rel="icon" href="../../svg/favicon.svg">
@@ -26,21 +26,19 @@ if (empty($_SESSION)) {
 <main>
 
     <?php
-    require_once("../plugins/connexion.php");
+    require_once('../plugins/connexion.php');
 
-
-    $q_select_logs = "SELECT C.id AS ID_CO, 
-                                     C.date_connection AS DATETIME, 
-                                     C.id_user AS ID_USER,
-                                     U.identifiant AS LOGIN,
-                                     U.first_name AS PRENOM,
-                                     U.last_name AS NOM,
-                                     A.name as TYPE
-                              FROM connexion C
-                                INNER JOIN users U ON C.id_user = U.identifiant
-                                INNER JOIN account_types A ON U.id_account_type = A.id
-                              ORDER BY C.id;";
-
+    $q_select_logs = 'SELECT C.id AS ID_CO, 
+        C.date_connection AS DATETIME, 
+        C.id_user AS ID_USER,
+        U.identifiant AS LOGIN,
+        U.first_name AS PRENOM,
+        U.last_name AS NOM,
+        A.name as TYPE
+    FROM connexion C
+        INNER JOIN users U ON C.id_user = U.identifiant
+        INNER JOIN account_types A ON U.id_account_type = A.id
+    ORDER BY C.id;';
     ?>
 
 
@@ -63,11 +61,11 @@ if (empty($_SESSION)) {
         $cursor->execute();
 
         foreach ($cursor->fetchAll(PDO::FETCH_ASSOC) as $table_row) {
-            echo "<tr>";
+            echo '<tr>';
             foreach ($table_row as $value) {
                 echo "<td>$value</td>";
             }
-            echo "</tr>";
+            echo '</tr>';
         }
         ?>
         </tbody>

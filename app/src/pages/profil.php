@@ -1,5 +1,4 @@
 <?php
-define('PAGES_', '../pages/');
 session_start();
 
 if (empty($_SESSION)) {
@@ -12,7 +11,7 @@ if (!isset($_SESSION['first']) || !isset($_SESSION['last']) || !isset($_SESSION[
     die();
 }
 
-define('__TEMPLATES__', dirname(__FILE__) . '../templates'); ?>
+#define('TEMPLATES_', dirname(__FILE__) . '../templates'); ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
