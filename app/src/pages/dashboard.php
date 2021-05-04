@@ -1,5 +1,5 @@
 <?php
-define('PAGES_', '../pages/');
+const PAGES_ = '../pages/';
 session_start();
 ?>
 
