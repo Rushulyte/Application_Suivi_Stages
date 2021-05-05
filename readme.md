@@ -1,5 +1,6 @@
-<img src="build/public/img/gradient_icon.png" width="64px" alt="Icon SIO"/> Application Suivi Stages
+<img src="https://raw.githubusercontent.com/Rushulyte/Application_Suivi_Stages/master/src/public/img/gradient_icon.png" width="64px" alt="Icon SIO"/> Application Suivi Stages [![CodeFactor](https://www.codefactor.io/repository/github/rushulyte/application_suivi_stages/badge)](https://www.codefactor.io/repository/github/rushulyte/application_suivi_stages)
 =============
+
 
 > Chaque année les étudiants de BTS SIO doivent effectuer une période de stage en
 entreprise. Ces stages sont obligatoires pour valider leur première année ainsi que leur
