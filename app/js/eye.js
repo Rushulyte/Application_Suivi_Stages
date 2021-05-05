@@ -3,5 +3,5 @@ function toggle_visibility() {
     let eye = document.getElementById("eye");
 
     element.type = (element.type === "password") ? "text": "password"
-    eye.src = ((element.type === "password") ? "../../img/eye2.png": "../../svg/eye1.svg")
+    eye.src = ((element.type === "password") ? "../../img/eye2.png": "../../img/eye1.png")
 }
