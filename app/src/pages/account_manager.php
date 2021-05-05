@@ -50,6 +50,19 @@ if ($_SESSION['type'] !== 'admin') {
                         INNER JOIN account_types A on U.id_account_type = A.id;
                 '; ?>
 
+    <form action="#">
+        <input type="submit" name="update" value="Ajouter" onclick="update()">
+        <input type="submit" name="delete_" value="Modifier" onclick="delete_()">
+    </form>
+
+    <?php
+    function update(){
+        echo "foo";
+    }
+    function delete_(){
+        print_r("foo");
+    } ?>
+
     <table>
         <thead>
         <tr>

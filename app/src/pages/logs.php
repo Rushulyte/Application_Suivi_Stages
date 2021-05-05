@@ -36,12 +36,11 @@ if (empty($_SESSION)) {
         U.first_name AS PRENOM,
         U.last_name AS NOM,
         A.name as TYPE
-    FROM connexion C
+    FROM connexions C
         INNER JOIN users U ON C.id_user = U.identifiant
         INNER JOIN account_types A ON U.id_account_type = A.id
     ORDER BY C.id;';
     ?>
-
 
     <table>
         <thead>
