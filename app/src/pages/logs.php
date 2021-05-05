@@ -29,7 +29,8 @@ if (empty($_SESSION)) {
     require_once('../plugins/connexion.php');
 
     $q_select_logs = 'SELECT C.id AS ID_CO, 
-        C.date_connection AS DATETIME, 
+        C.date_connection AS DATE, 
+        C.time_connection AS TIME,
         C.id_user AS ID_USER,
         U.identifiant AS LOGIN,
         U.first_name AS PRENOM,
@@ -45,13 +46,14 @@ if (empty($_SESSION)) {
     <table>
         <thead>
         <tr>
-            <th>num</th>
-            <th>horodatage</th>
-            <th>id</th>
-            <th>login</th>
-            <th>prenom</th>
-            <th>nom</th>
-            <th>type</th>
+            <th>N°</th>
+            <th>Date</th>
+            <th>Heure</th>
+            <th>ID</th>
+            <th>Login</th>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Type</th>
         </tr>
         </thead>
 

@@ -14,8 +14,9 @@ create table connexion
 (
     id              int auto_increment
         primary key,
-    id_user         int  null,
-    date_connection date null
+    id_user         char(1)  null,
+    date_connection date null,
+    time_connection time null
 );
 
 create table users
