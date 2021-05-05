@@ -39,7 +39,10 @@
                     <input type="text" name="identifiant" placeholder="Identifiant" required>
                 </label>
                 <label for="password">
-                    <input type="password" name="password" placeholder="Mot de Passe" required>
+                    <input id="password" type="password" name="password" placeholder="Mot de Passe" required>
+                    <span onclick="toggle_visibility()" class="field-icon toggle-password">
+                        <img id="eye" src="../../img/eye2.png" alt="236">
+                    </span>
                 </label>
             </div>
             <div class="container">
@@ -51,4 +54,5 @@
     <line>
 </main>
 </body>
+<script src="../../js/eye.js"></script>
 </html>

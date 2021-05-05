@@ -40,3 +40,101 @@ input[type="text"], input[type="password"], input[type="submit"]:hover, input[ty
     border-bottom: 2px solid white;
     overflow: hidden;
 }
+
+.content, .equalizer {
+    display: flex;
+    margin: 25px;
+}
+
+.equalizer {
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+:-ms-input-placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
+
+::-ms-input-placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
+
+::placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: #fff;
+}
+
+::-ms-input-placeholder {
+    color: #fff;
+}
+
+
+input {
+    padding: 10px;
+    color: #fff;
+    outline: none;
+    border: none;
+    transition: all .25s ease-in-out;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+input#password {
+    padding: 10px 42px 10px 10px;
+}
+
+.equalizer input {
+    width: 100%;
+}
+
+input#password {
+    padding: 10px 42px 10px 10px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    border-bottom: 2px solid transparent;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    border-bottom: 2px solid #fff;
+    overflow: hidden;
+}
+
+.field-icon {
+    float: end;
+    transform: translate(-32px, 10px);
+    position: absolute;
+    z-index: 2;
+}
+
+span img {
+    height: 16px;
+    margin: 0;
+}
+
+table {
+    text-align: center;
+    font-family: 'Oxygen-Regular', serif;
+    color: white;
+}
+
+tr {
+    width: 100%;
+}
+
+th {
+    text-transform: lowercase;
+}
