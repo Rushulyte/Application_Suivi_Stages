@@ -51,11 +51,11 @@ $_SESSION['first'] = $array['first'];
 $_SESSION['last'] = $array['last'];
 $_SESSION['type'] = $array['type'];
 
-$query_log = "insert into ass.connexions(id_user, date_connection, time_connection) values(?, ?, ?);";
+$query_log = 'insert into ass.connexions(id_user, date_connection, time_connection) values(?, ?, ?);';
 $cursor = $connexion->prepare($query_log);
 $cursor->bindValue(1, $_SESSION['id']);
-$cursor->bindValue(2, date("Y-m-d"));
-$cursor->bindValue(3, gmdate("H:i:s", time() + 3600*(date("I") + 2)));
+$cursor->bindValue(2, date('Y-m-d'));
+$cursor->bindValue(3, gmdate('H:i:s', time() + 3600*(date('I') + 2)));
 $cursor->execute();
 
 header('Location: ' . PAGES_ . 'dashboard.php');

@@ -45,33 +45,28 @@ if ($_SESSION['type'] !== 'admin') {
                         U.identifiant as id, 
                         U.last_name as last,
                         U.first_name as first,
+                        U.authentication_string as mdp,
                         A.name as type 
                     FROM users U
                         INNER JOIN account_types A on U.id_account_type = A.id;
                 '; ?>
 
-    <form action="#">
-        <input type="submit" name="update" value="Ajouter" onclick="update()">
-        <input type="submit" name="delete_" value="Modifier" onclick="delete_()">
+
+    <form action="#" method="GET">
+        <input type="submit" name="action" value="Ajouter">
+        <input type="submit" name="action" value="Modifier">
+        <input type="submit" name="action" value="Supprimer">
     </form>
 
-    <?php
-    function update(){
-        echo "foo";
-    }
-    function delete_(){
-        print_r("foo");
-    } ?>
-
     <table>
-        <thead>
         <tr>
-            <th>login</th>
-            <th>nom</th>
-            <th>prénom</th>
-            <th>type</th>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Mot de passe hashé</th>
+            <th>Type</th>
         </tr>
-        </thead>
+
 
         <tbody>
         <?php
@@ -88,6 +83,57 @@ if ($_SESSION['type'] !== 'admin') {
         ?>
         </tbody>
     </table>
+
+    <?php
+
+    if (empty($_GET)) {
+        die();
+    }
+
+    if (!isset($_GET['action'])) {
+        die();
+    } ?>
+
+    <form action="#" method="GET">
+        <input type="submit" name="action" value="Annuler">
+    </form>
+
+    <?php
+    if ($_GET['action'] == 'Annuler') {
+        header('Location: account_manager.php');
+        die();
+    }
+
+    switch ($_GET['action']) {
+    case 'Ajouter' : ?>
+    <form action='ud_users.php?action=Ajouter' method="POST"><?php
+        break;
+        case 'Modifier' : ?>
+        <form action='ud_users.php?action=Modifier' method="POST"><?php
+            break;
+            case 'Supprimer' : ?>
+            <form action='ud_users.php?action=Supprimer' method="POST"><?php
+                break;
+                }
+                ?>
+                <label>
+                    <input type="text" name="ID" placeholder="ID" required>
+                </label>
+                <label>
+                    <input type="text" name="nom" placeholder="Nom" required>
+                </label>
+                <label>
+                    <input type="text" name="prenom" placeholder="Prénom" required>
+                </label>
+                <label>
+                    <input type="password" name="mdp" placeholder="Mot de passe" required>
+                </label>
+                <label>
+                    <input type="text" name="type" placeholder="Type" required>
+                </label>
+                <input type="submit" name="validation" value="Valider">
+                <input type="reset" name="validation" value="Annuler">
+            </form>
 </main>
 </body>
 </html>

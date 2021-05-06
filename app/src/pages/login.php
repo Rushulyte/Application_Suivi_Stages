@@ -15,20 +15,20 @@
 
         <p>
             <?php
-            if (isset($_GET["error"])) {
-                switch (htmlspecialchars($_GET["error"])) {
-                    case "unset":
-                        echo "Veuillez entrer un nom et un mot de passe pour vous connecter";
+            if (isset($_GET['error'])) {
+                switch (htmlspecialchars($_GET['error'])) {
+                    case 'unset':
+                        echo 'Veuillez entrer un nom et un mot de passe pour vous connecter';
                         break;
-                    case "incorrect":
-                        echo "Le nom ou le mot de passe est incorrect !";
+                    case 'incorrect':
+                        echo 'Le nom ou le mot de passe est incorrect !';
                         break;
 
                     default:
                         echo "Une erreur inconnue s'est produite durant la validation";;
                 }
             } else {
-                    echo "Authentifiez vous avec vos identifiants du domaine SIO.Fulbert";
+                    echo 'Authentifiez vous avec vos identifiants du domaine SIO.Fulbert';
                 }
             ?>
         </p>
@@ -41,7 +41,7 @@
                 <label for="password">
                     <input id="password" type="password" name="password" placeholder="Mot de Passe" required>
                     <span onclick="toggle_visibility()" class="field-icon toggle-password">
-                        <img id="eye" src="../../img/eye2.png" alt="236">
+                        <img id="eye" src="../../svg/eye2.svg" alt="236">
                     </span>
                 </label>
             </div>
