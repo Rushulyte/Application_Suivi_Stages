@@ -51,11 +51,7 @@ $update_user = '
 $delete_user = '
         delete
         from ass.users
-        where identifiant = ? and
-              first_name = ? and
-              last_name = ? and
-              authentication_string = ? and
-              id_account_type = ?;
+        where identifiant = ?;
 ';
 
 $cursor = $connexion->prepare($select_user);
