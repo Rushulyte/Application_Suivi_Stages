@@ -77,19 +77,19 @@ function action($query) {
     $cursor->bindValue(4, $account_type);
     $cursor->bindValue(5, $identifiant);
     $cursor->execute();
-    $array = $cursor->fetch(PDO::FETCH_ASSOC);
+    return $cursor->fetch(PDO::FETCH_ASSOC);
 }
 
 if ($_GET['action'] == 'Ajouter') {
-    action($add_user);
+    echo action($add_user);
 }
 
 if ($_GET['action'] == 'Modifier') {
-    action($update_user);;
+    echo action($update_user);;
 }
 
 if ($_GET['action'] == 'Supprimer') {
-    action($delete_user);
+    echo action($delete_user);
 }
 
 header('Location: account_manager.php');
