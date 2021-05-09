@@ -35,7 +35,7 @@ $select_user = '
 ';
 
 $add_user = '
-        insert into ass.users(identifiant, first_name, last_name, authentication_string, id_account_type)
+        insert into ass.users(first_name, last_name, authentication_string, id_account_type, identifiant)
         values (?, ?, ? ,?, ?);
     ';
 
@@ -51,7 +51,11 @@ $update_user = '
 $delete_user = '
         delete
         from ass.users
-        where identifiant = ?;
+        where first_name = ? and
+              last_name = ? and
+              authentication_string = ? and
+              id_account_type = ? and
+              identifiant = ?;
 ';
 
 $cursor = $connexion->prepare($select_user);
@@ -65,21 +69,8 @@ if ($array) {
     $test_id = True;
 }
 
-if ($_GET['action'] == 'Ajouter') {
-    $cursor = $connexion->prepare($add_user);
-    $cursor->bindValue(1, $identifiant);
-    $cursor->bindValue(2, $first_name);
-    $cursor->bindValue(3, $last_name);
-    $cursor->bindValue(4, $pwd_hashed);
-    $cursor->bindValue(5, $account_type);
-    $cursor->execute();
-    $array = $cursor->fetch(PDO::FETCH_ASSOC);
-    print_r($array);
-    echo $array;
-}
-
-if ($_GET['action'] == 'Modifier') {
-    $cursor = $connexion->prepare($update_user);
+function action($query) {
+    $cursor = $connexion->prepare($query);
     $cursor->bindValue(1, $first_name);
     $cursor->bindValue(2, $last_name);
     $cursor->bindValue(3, $pwd_hashed);
@@ -87,21 +78,18 @@ if ($_GET['action'] == 'Modifier') {
     $cursor->bindValue(5, $identifiant);
     $cursor->execute();
     $array = $cursor->fetch(PDO::FETCH_ASSOC);
-    print_r($array);
-    echo $array;
+}
+
+if ($_GET['action'] == 'Ajouter') {
+    action($add_user);
+}
+
+if ($_GET['action'] == 'Modifier') {
+    action($update_user);;
 }
 
 if ($_GET['action'] == 'Supprimer') {
-    $cursor = $connexion->prepare($delete_user);
-    $cursor->bindValue(1, $identifiant);
-    $cursor->bindValue(2, $first_name);
-    $cursor->bindValue(3, $last_name);
-    $cursor->bindValue(4, $pwd_hashed);
-    $cursor->bindValue(5, $account_type);
-    $cursor->execute();
-    $array = $cursor->fetch(PDO::FETCH_ASSOC);
-    print_r($array);
-    echo $array;
+    action($delete_user);
 }
 
 header('Location: account_manager.php');
