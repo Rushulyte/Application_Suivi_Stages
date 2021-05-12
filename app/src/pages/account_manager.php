@@ -126,10 +126,10 @@ if ($_SESSION['type'] !== 'admin') {
                     <input type="text" name="prenom" placeholder="Prénom" required>
                 </label>
                 <label>
-                    <input type="password" name="mdp" placeholder="Mot de passe" required>
+                    <input type="password" name="mdp" placeholder="Mot de passe">
                 </label>
                 <label>
-                    <input type="text" name="type" placeholder="Type" required>
+                    <input type="text" name="type" placeholder="Type">
                 </label>
                 <input type="submit" name="validation" value="Valider">
                 <input type="reset" name="validation" value="Annuler">
