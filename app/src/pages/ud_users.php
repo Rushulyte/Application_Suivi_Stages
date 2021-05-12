@@ -1,6 +1,6 @@
 <?php
 if (empty($_POST)) {
-    header('Location: account_manager.php?error=allEempty');
+    header('Location: account_manager.php?error=allEmpty');
     die();
 }
 
@@ -28,14 +28,8 @@ switch ($_POST['type']) {
 
 include '../plugins/connexion.php';
 
-$select_user = '
-        select identifiant as id
-        from ass.users
-        where identifiant = ?;
-';
-
 $add_user = '
-        insert into ass.users(identifiant, first_name, last_name, authentication_string, id_account_type)
+        insert into ass.users(first_name, last_name, authentication_string, id_account_type, identifiant)
         values (?, ?, ? ,?, ?);
     ';
 
@@ -51,35 +45,22 @@ $update_user = '
 $delete_user = '
         delete
         from ass.users
-        where identifiant = ? and
-              first_name = ? and
+        where first_name = ? and
               last_name = ? and
               authentication_string = ? and
-              id_account_type = ?;
+              id_account_type = ? and
+              identifiant = ?;
 ';
-
-$cursor = $connexion->prepare($select_user);
-$cursor->bindValue(1, $identifiant);
-$cursor->execute();
-$array = $cursor->fetch(PDO::FETCH_ASSOC);
-
-$test_id = False;
-
-if ($array) {
-    $test_id = True;
-}
 
 if ($_GET['action'] == 'Ajouter') {
     $cursor = $connexion->prepare($add_user);
-    $cursor->bindValue(1, $identifiant);
-    $cursor->bindValue(2, $first_name);
-    $cursor->bindValue(3, $last_name);
-    $cursor->bindValue(4, $pwd_hashed);
-    $cursor->bindValue(5, $account_type);
+    $cursor->bindValue(1, $first_name);
+    $cursor->bindValue(2, $last_name);
+    $cursor->bindValue(3, $pwd_hashed);
+    $cursor->bindValue(4, $account_type);
+    $cursor->bindValue(5, $identifiant);
     $cursor->execute();
-    $array = $cursor->fetch(PDO::FETCH_ASSOC);
-    print_r($array);
-    echo $array;
+    $cursor->fetch(PDO::FETCH_ASSOC);
 }
 
 if ($_GET['action'] == 'Modifier') {
@@ -90,22 +71,18 @@ if ($_GET['action'] == 'Modifier') {
     $cursor->bindValue(4, $account_type);
     $cursor->bindValue(5, $identifiant);
     $cursor->execute();
-    $array = $cursor->fetch(PDO::FETCH_ASSOC);
-    print_r($array);
-    echo $array;
+    $cursor->fetch(PDO::FETCH_ASSOC);
 }
 
 if ($_GET['action'] == 'Supprimer') {
     $cursor = $connexion->prepare($delete_user);
-    $cursor->bindValue(1, $identifiant);
-    $cursor->bindValue(2, $first_name);
-    $cursor->bindValue(3, $last_name);
-    $cursor->bindValue(4, $pwd_hashed);
-    $cursor->bindValue(5, $account_type);
+    $cursor->bindValue(1, $first_name);
+    $cursor->bindValue(2, $last_name);
+    $cursor->bindValue(3, $pwd_hashed);
+    $cursor->bindValue(4, $account_type);
+    $cursor->bindValue(5, $identifiant);
     $cursor->execute();
-    $array = $cursor->fetch(PDO::FETCH_ASSOC);
-    print_r($array);
-    echo $array;
+    $cursor->fetch(PDO::FETCH_ASSOC);
 }
 
 header('Location: account_manager.php');
