@@ -31,8 +31,7 @@ if (empty($_SESSION)) {
     $q_select_logs = 'SELECT C.id AS ID_CO, 
         C.date_connection AS DATE, 
         C.time_connection AS TIME,
-        C.id_user AS ID_USER,
-        U.identifiant AS LOGIN,
+        U.identifiant AS ID,
         U.first_name AS PRENOM,
         U.last_name AS NOM,
         A.name as TYPE
@@ -48,7 +47,6 @@ if (empty($_SESSION)) {
             <th>N°</th>
             <th>Date</th>
             <th>Heure</th>
-            <th>ID</th>
             <th>Login</th>
             <th>Prénom</th>
             <th>Nom</th>
