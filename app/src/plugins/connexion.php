@@ -12,7 +12,6 @@ try {
         "",
         $options
     );
-
 }
 catch (PDOException $error) {
     echo 'Erreur : '.$error->getMessage();

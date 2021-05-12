@@ -56,9 +56,9 @@ create table entreprises
     id_ent  int auto_increment
         primary key,
     name    varchar(16) not null,
-    contact varchar(16) null,
-    mail    varchar(32) null,
-    tel     int(10)     null,
+    contact varchar(64) null,
+    mail    varchar(64) null,
+    tel     char(10)     null,
     address varchar(64) null
 );
 
@@ -103,3 +103,9 @@ values (1, 'SLAM');
 insert into ass.specialities (id_spe, name)
 values (2, 'SISR');
 
+insert into ass.entreprises (name, contact, address)
+values ('ACTIA-MULLER', 'SAUZAY Olivier', '5 rue de la Taye 28000 LUCE');
+insert into ass.entreprises (name, address)
+values ('AFS', 'Lycée Fulbert 28000 CHARTRES');
+insert into ass.entreprises (name, address, contact, mail)
+values ('AG2R LA MONDIALE', '12 rue Edmond Poillot 28000 CHARTRES', 'COLAISSEAU Romain', 'Romain.COLAISSEAU.ext@ag2rlamondiale.fr');

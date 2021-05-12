@@ -106,13 +106,13 @@ if ($_SESSION['type'] !== 'admin') {
 
     switch ($_GET['action']) {
     case 'Ajouter' : ?>
-    <form action='ud_users.php?action=Ajouter' method="POST"><?php
+    <form action='crud_users.php?action=Ajouter' method="POST"><?php
         break;
         case 'Modifier' : ?>
-        <form action='ud_users.php?action=Modifier' method="POST"><?php
+        <form action='crud_users.php?action=Modifier' method="POST"><?php
             break;
             case 'Supprimer' : ?>
-            <form action='ud_users.php?action=Supprimer' method="POST"><?php
+            <form action='crud_users.php?action=Supprimer' method="POST"><?php
                 break;
                 }
                 ?>
