@@ -54,7 +54,8 @@ $properties_add = [$id, $prenom, $nom, $mdp, $type];
 $properties_update = [$prenom, $nom, $mdp, $type, $id];
 $properties_delete = [$id, $prenom, $nom];
 
-function action($connect, $query, $parameters) {
+function action($connect, $query, $parameters)
+{
     $cursor = $connect->prepare($query);
     $index = 1;
     foreach ($parameters as $parameter) {
@@ -65,7 +66,7 @@ function action($connect, $query, $parameters) {
     $cursor->fetch(PDO::FETCH_ASSOC);
 }
 
-switch($_GET['action']) {
+switch ($_GET['action']) {
     case 'Ajouter':
         action($connexion, $add_user, $properties_add);
         break;
