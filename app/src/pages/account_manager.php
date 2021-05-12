@@ -36,29 +36,34 @@ if ($_SESSION['type'] !== 'admin') {
     </nav>
 </header>
 <main>
+
     <?php
+
+    if ($_SESSION['type'] === 'admin') {
+        echo '<form action="#" method="GET">
+               <input type="submit" name="action" value="Ajouter">
+               <input type="submit" name="action" value="Modifier">
+               <input type="submit" name="action" value="Supprimer">
+              </form>';
+    }
 
     include '../plugins/connexion.php';
 
     $get_users = '
-                    SELECT
-                        U.identifiant as id, 
-                        U.last_name as last,
-                        U.first_name as first,
-                        U.authentication_string as mdp,
-                        A.name as type 
-                    FROM users U
-                        INNER JOIN account_types A on U.id_account_type = A.id;
-                '; ?>
+    SELECT
+        U.identifiant as id, 
+        U.last_name as last,
+        U.first_name as first,
+        U.authentication_string as mdp,
+        A.name as type 
+    FROM users U
+    INNER JOIN account_types A on U.id_account_type = A.id;
+    ';
 
+    $cursor = $connexion->prepare($get_users);
+    $cursor->execute();
 
-    <form action="#" method="GET">
-        <input type="submit" name="action" value="Ajouter">
-        <input type="submit" name="action" value="Modifier">
-        <input type="submit" name="action" value="Supprimer">
-    </form>
-
-    <table>
+    echo '<table>
         <tr>
             <th>ID</th>
             <th>Nom</th>
@@ -66,74 +71,61 @@ if ($_SESSION['type'] !== 'admin') {
             <th>Mot de passe hashé</th>
             <th>Type</th>
         </tr>
+        <tbody>';
 
-
-        <tbody>
-        <?php
-        $cursor = $connexion->prepare($get_users);
-        $cursor->execute();
-
-        foreach ($cursor->fetchAll(PDO::FETCH_ASSOC) as $table_row) {
-            echo '<tr>';
-            foreach ($table_row as $value) {
-                echo "<td>$value</td>";
-            }
-            echo '</tr>';
+    foreach ($cursor->fetchAll(PDO::FETCH_ASSOC) as $table_row) {
+        echo '<tr>';
+        foreach ($table_row as $value) {
+            echo "<td>$value</td>";
         }
-        ?>
-        </tbody>
-    </table>
-
-    <?php
-
-    if (empty($_GET)) {
-        die();
+        echo '</tr>';
     }
 
-    if (!isset($_GET['action'])) {
-        die();
+    echo '</tbody></table>';
+
+
+    if ($_SESSION['type'] === 'admin') {
+
+        if (empty($_GET)) {
+            die();
+        }
+
+        if (!isset($_GET['action'])) {
+            die();
+        }
+
+        echo '<form action="#" method="GET">
+                <input type="submit" name="action" value="Annuler">
+              </form>';
+
+        if ($_GET['action'] == 'Annuler') {
+            header('Location: account_manager.php');
+            die();
+        }
+
+        switch ($_GET['action']) {
+            case 'Ajouter' :
+                echo '<form action="crud_users.php?action=Ajouter" method="POST">';
+                break;
+            case 'Modifier' :
+                echo '<form action="crud_users.php?action=Modifier" method="POST">';
+                break;
+            case 'Supprimer' :
+                echo '<form action="crud_users.php?action=Supprimer" method="POST">';
+                break;
+        }
+
+        echo '<label><input type="text" name="ID" placeholder="ID" required></label>
+              <label><input type="text" name="nom" placeholder="Nom" required></label>
+              <label><input type="text" name="prenom" placeholder="Prénom" required></label>
+              <label><input type="password" name="mdp" placeholder="Mot de passe"></label>
+              <label><input type="text" name="type" placeholder="Type"></label>
+              <input type="submit" name="validation" value="Valider">
+              <input type="reset" name="validation" value="Annuler">
+              </form>';
+
     } ?>
 
-    <form action="#" method="GET">
-        <input type="submit" name="action" value="Annuler">
-    </form>
-
-    <?php
-    if ($_GET['action'] == 'Annuler') {
-        header('Location: account_manager.php');
-        die();
-    }
-
-    switch ($_GET['action']) {
-    case 'Ajouter' : ?>
-    <form action='crud_users.php?action=Ajouter' method="POST"><?php
-        break;
-        case 'Modifier' : ?>
-        <form action='crud_users.php?action=Modifier' method="POST"><?php
-            break;
-            case 'Supprimer' : ?>
-            <form action='crud_users.php?action=Supprimer' method="POST"><?php
-                break;
-                }
-                ?>
-                <label>
-                    <input type="text" name="ID" placeholder="ID" required>
-                </label>
-                <label>
-                    <input type="text" name="nom" placeholder="Nom" required>
-                </label>
-                <label>
-                    <input type="text" name="prenom" placeholder="Prénom" required>
-                </label>
-                <label>
-                    <input type="password" name="mdp" placeholder="Mot de passe">
-                </label>
-                <label>
-                    <input type="text" name="type" placeholder="Type">
-                </label>
-                <input type="submit" name="validation" value="Valider">
-                <input type="reset" name="validation" value="Annuler">
-            </form>
 </main>
 </body>
 </html>

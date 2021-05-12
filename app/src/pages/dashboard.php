@@ -24,16 +24,16 @@ if (empty($_SESSION)) {
         <a class="clickable" id="nav" href="#">
             <img src="../../svg/sio.svg" alt="236">
         </a>
-        <a href="profil.php">Profil</a>
-        <?php if ($_SESSION['type'] == 'admin') {
-            ?>
-            <a href="account_manager.php">Gestionnaire de comptes</a>
-            <a href="logs.php">Logs</a>
-        <?php } ?>
     </nav>
 </header>
 <main>
     <h1>Recherche de Stages en BTS SIO</h1>
+
+    <a href="profil.php">Profil</a>
+
+    <?php if ($_SESSION['type'] == 'admin') {
+        echo '<a href="account_manager.php">Gestionnaire de comptes</a>
+              <a href="logs.php">Logs</a>';} ?>
 
     <h2>Partenaires</h2>
 
