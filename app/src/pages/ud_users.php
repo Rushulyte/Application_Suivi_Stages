@@ -75,6 +75,9 @@ switch($_GET['action']) {
     case 'Supprimer':
         action($connexion, $delete_user, $properties_delete);
         break;
+    default:
+        header('Location: account_manager.php?error=action');
+        die();
 }
 
 header('Location: account_manager.php');
