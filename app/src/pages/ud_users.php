@@ -35,7 +35,7 @@ $select_user = '
 ';
 
 $add_user = '
-        insert into ass.users(first_name, last_name, authentication_string, id_account_type, identifiant)
+        insert into ass.users(identifiant, first_name, last_name, authentication_string, id_account_type)
         values (?, ?, ? ,?, ?);
     ';
 
@@ -51,11 +51,11 @@ $update_user = '
 $delete_user = '
         delete
         from ass.users
-        where first_name = ? and
+        where identifiant = ? and
+              first_name = ? and
               last_name = ? and
               authentication_string = ? and
-              id_account_type = ? and
-              identifiant = ?;
+              id_account_type = ?;
 ';
 
 $cursor = $connexion->prepare($select_user);
@@ -69,27 +69,43 @@ if ($array) {
     $test_id = True;
 }
 
-function action($query) {
-    $cursor = $connexion->prepare($query);
+if ($_GET['action'] == 'Ajouter') {
+    $cursor = $connexion->prepare($add_user);
+    $cursor->bindValue(1, $identifiant);
+    $cursor->bindValue(2, $first_name);
+    $cursor->bindValue(3, $last_name);
+    $cursor->bindValue(4, $pwd_hashed);
+    $cursor->bindValue(5, $account_type);
+    $cursor->execute();
+    $array = $cursor->fetch(PDO::FETCH_ASSOC);
+    print_r($array);
+    echo $array;
+}
+
+if ($_GET['action'] == 'Modifier') {
+    $cursor = $connexion->prepare($update_user);
     $cursor->bindValue(1, $first_name);
     $cursor->bindValue(2, $last_name);
     $cursor->bindValue(3, $pwd_hashed);
     $cursor->bindValue(4, $account_type);
     $cursor->bindValue(5, $identifiant);
     $cursor->execute();
-    return $cursor->fetch(PDO::FETCH_ASSOC);
-}
-
-if ($_GET['action'] == 'Ajouter') {
-    echo action($add_user);
-}
-
-if ($_GET['action'] == 'Modifier') {
-    echo action($update_user);;
+    $array = $cursor->fetch(PDO::FETCH_ASSOC);
+    print_r($array);
+    echo $array;
 }
 
 if ($_GET['action'] == 'Supprimer') {
-    echo action($delete_user);
+    $cursor = $connexion->prepare($delete_user);
+    $cursor->bindValue(1, $identifiant);
+    $cursor->bindValue(2, $first_name);
+    $cursor->bindValue(3, $last_name);
+    $cursor->bindValue(4, $pwd_hashed);
+    $cursor->bindValue(5, $account_type);
+    $cursor->execute();
+    $array = $cursor->fetch(PDO::FETCH_ASSOC);
+    print_r($array);
+    echo $array;
 }
 
 header('Location: account_manager.php');
