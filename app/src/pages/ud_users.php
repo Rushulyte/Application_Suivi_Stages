@@ -29,7 +29,7 @@ switch ($_POST['type']) {
 include '../plugins/connexion.php';
 
 $add_user = '
-        insert into ass.users(first_name, last_name, authentication_string, id_account_type, identifiant)
+        insert into ass.users(identifiant, first_name, last_name, authentication_string, id_account_type)
         values (?, ?, ? ,?, ?);
     ';
 
@@ -45,14 +45,14 @@ $update_user = '
 $delete_user = '
         delete
         from ass.users
-        where first_name = ? and
-              last_name = ? and
-              authentication_string = ? and
-              id_account_type = ? and
-              identifiant = ?;
+        where identifiant = ? and 
+              first_name = ? and
+              last_name = ?;
 ';
 
-$properties = [$prenom, $nom, $mdp, $type, $id];
+$properties_add = [$id, $prenom, $nom, $mdp, $type];
+$properties_update = [$prenom, $nom, $mdp, $type, $id];
+$properties_delete = [$id, $prenom, $nom];
 
 function action($connect, $query, $parameters) {
     $cursor = $connect->prepare($query);
@@ -66,15 +66,15 @@ function action($connect, $query, $parameters) {
 }
 
 if ($_GET['action'] == 'Ajouter') {
-    action($connexion, $add_user, $properties);
+    action($connexion, $add_user, $properties_add);
 }
 
 if ($_GET['action'] == 'Modifier') {
-    action($connexion, $update_user, $properties);
+    action($connexion, $update_user, $properties_update);
 }
 
 if ($_GET['action'] == 'Supprimer') {
-    action($connexion, $delete_user, $properties);
+    action($connexion, $delete_user, $properties_delete);
 }
 
 header('Location: account_manager.php');

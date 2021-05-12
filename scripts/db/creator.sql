@@ -5,7 +5,7 @@ use ass;
 
 create table users
 (
-    identifiant           char(1)       not null
+    identifiant           varchar(64)       not null
         primary key,
     first_name            varchar(16)   not null,
     last_name             varchar(16)   not null,
