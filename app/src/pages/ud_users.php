@@ -65,16 +65,16 @@ function action($connect, $query, $parameters) {
     $cursor->fetch(PDO::FETCH_ASSOC);
 }
 
-if ($_GET['action'] == 'Ajouter') {
-    action($connexion, $add_user, $properties_add);
-}
-
-if ($_GET['action'] == 'Modifier') {
-    action($connexion, $update_user, $properties_update);
-}
-
-if ($_GET['action'] == 'Supprimer') {
-    action($connexion, $delete_user, $properties_delete);
+switch($_GET['action']) {
+    case 'Ajouter':
+        action($connexion, $add_user, $properties_add);
+        break;
+    case 'Modifier':
+        action($connexion, $update_user, $properties_update);
+        break;
+    case 'Supprimer':
+        action($connexion, $delete_user, $properties_delete);
+        break;
 }
 
 header('Location: account_manager.php');
