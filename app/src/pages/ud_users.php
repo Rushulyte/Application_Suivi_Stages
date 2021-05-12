@@ -52,7 +52,7 @@ $delete_user = '
               identifiant = ?;
 ';
 
-$parameters = [$prenom, $nom, $mdp, $type, $id];
+$properties = [$prenom, $nom, $mdp, $type, $id];
 
 function action($connect, $query, $parameters) {
     $cursor = $connect->prepare($query);
@@ -66,15 +66,15 @@ function action($connect, $query, $parameters) {
 }
 
 if ($_GET['action'] == 'Ajouter') {
-    action($connexion, $add_user, $parameters);
+    action($connexion, $add_user, $properties);
 }
 
 if ($_GET['action'] == 'Modifier') {
-    action($connexion, $update_user, $parameters);
+    action($connexion, $update_user, $properties);
 }
 
 if ($_GET['action'] == 'Supprimer') {
-    action($connexion, $delete_user, $parameters);
+    action($connexion, $delete_user, $properties);
 }
 
 header('Location: account_manager.php');
