@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/Rushulyte/Application_Suivi_Stages/master/src/public/img/gradient_icon.png" width="64px" alt="Icon SIO"/> Application Suivi Stages [![CodeFactor](https://www.codefactor.io/repository/github/rushulyte/application_suivi_stages/badge)](https://www.codefactor.io/repository/github/rushulyte/application_suivi_stages)
+<img src="https://github.com/Rushulyte/Application_Suivi_Stages/blob/master/app/svg/icon_gradient.svg" width="64px" alt="Icon SIO"/> Application Suivi Stages [![CodeFactor](https://www.codefactor.io/repository/github/rushulyte/application_suivi_stages/badge)](https://www.codefactor.io/repository/github/rushulyte/application_suivi_stages)
 =============
 
 
