@@ -1,11 +1,11 @@
 <img src="https://github.com/Rushulyte/Application_Suivi_Stages/blob/master/app/svg/icon_gradient.svg" width="64px" alt="Icon SIO"/> Application Suivi Stages 
 
 [![CodeFactor](https://www.codefactor.io/repository/github/rushulyte/application_suivi_stages/badge)](https://www.codefactor.io/repository/github/rushulyte/application_suivi_stages)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/rushulyte/application_suivi_stages))
-![GitHub repo size](https://img.shields.io/github/repo-size/rushulyte/application_suivi_stages))
-![Lines of code](https://img.shields.io/tokei/lines/github/rushulyte/application_suivi_stages))
-![GitHub](https://img.shields.io/github/license/rushulyte/application_suivi_stages))
-![GitHub last commit](https://img.shields.io/github/last-commit/rushulyte/application_suivi_stages))
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/rushulyte/application_suivi_stages)
+![GitHub repo size](https://img.shields.io/github/repo-size/rushulyte/application_suivi_stages)
+![Lines of code](https://img.shields.io/tokei/lines/github/rushulyte/application_suivi_stages)
+![GitHub](https://img.shields.io/github/license/rushulyte/application_suivi_stages)
+![GitHub last commit](https://img.shields.io/github/last-commit/rushulyte/application_suivi_stages)
 =============
 
 
